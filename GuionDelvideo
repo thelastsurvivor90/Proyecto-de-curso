@@ -1,0 +1,179 @@
+# Proyecto-de-curso
+Proyecto: Sistema de Recomendación de Películas usando Descomposición en Valores Singulares (SVD)
+# Guia Completa para Video Explicativo
+## Proyecto: Compresion de Imagenes usando SVD
+
+**Estudiante:** Deyvi Samuel Barrera Rodriguez  
+**Asignatura:** Algebra Lineal  
+**Docente:** Ruth Mery Gonzales  
+**Duracion sugerida:** 12-15 minutos
+
+---
+
+## ESTRUCTURA DEL VIDEO
+
+### 1. INTRODUCCION (1-2 minutos)
+
+**Tomas sugeridas:**
+- Pantalla con titulo del proyecto
+- Presentacion personal
+
+**Guion:**
+> "Hola, mi nombre es Deyvi Samuel Barrera Rodriguez. En este video presentare mi proyecto de curso para la asignatura de Algebra Lineal, bajo la direccion de la profesora Ruth Mery Gonzales.
+>
+> El proyecto consiste en un sistema de compresion de imagenes utilizando la Descomposicion en Valores Singulares o SVD, una de las herramientas mas poderosas del algebra lineal con aplicaciones directas en ciencias de la computacion."
+
+**Puntos clave a mencionar:**
+- Objetivo del proyecto
+- Relevancia practica del algebra lineal
+- Estructura del video
+
+---
+
+### 2. FUNDAMENTOS MATEMATICOS (3-4 minutos)
+
+**Tomas sugeridas:**
+- Mostrar documento LaTeX en pantalla
+- Ecuaciones y diagramas
+
+**Guion:**
+
+#### 2.1 Que es SVD
+> "La Descomposicion en Valores Singulares permite expresar cualquier matriz A como el producto de tres matrices: A = U Sigma V transpuesta.
+>
+> Donde U y V son matrices ortogonales y Sigma es una matriz diagonal que contiene los valores singulares ordenados de mayor a menor."
+
+**Mostrar en pantalla:** Ecuacion A = U Σ V^T
+
+#### 2.2 Por que funciona para compresion
+> "La clave esta en que los valores singulares nos indican la importancia de cada componente. Los primeros valores singulares son mucho mas grandes que los ultimos, lo que significa que podemos eliminar los componentes menos importantes sin perder mucha informacion visual."
+
+**Mostrar en pantalla:** Grafica de valores singulares decayendo
+
+#### 2.3 Teorema de Eckart-Young
+> "Matematicamente, el Teorema de Eckart-Young nos garantiza que si queremos aproximar una matriz con una de rango menor, la mejor aproximacion posible se obtiene usando solo los k valores singulares mas grandes del SVD."
+
+**Mostrar en pantalla:** Formula de aproximacion de rango k
+
+---
+
+### 3. DEMOSTRACION DEL CODIGO (4-5 minutos)
+
+**Tomas sugeridas:**
+- Pantalla compartida mostrando el codigo Python
+- Editor de codigo con syntax highlighting
+
+**Guion:**
+
+#### 3.1 Estructura del programa
+> "Implemente el sistema en Python usando tres bibliotecas principales: NumPy para las operaciones de algebra lineal, Matplotlib para visualizacion, y Pillow para manejo de imagenes."
+
+**Mostrar:** Imports del codigo
+
+#### 3.2 Funcion principal de compresion
+> "La funcion mas importante es 'comprimir', que toma la imagen y el valor k como parametros. Veamos como funciona paso a paso..."
+
+**Mostrar y explicar:**
+```python
+def comprimir(self, k):
+    # 1. Separar canales de color
+    # 2. Aplicar SVD a cada canal
+    # 3. Mantener solo k valores singulares
+    # 4. Reconstruir la imagen
+```
+
+#### 3.3 Calculo de metricas
+> "Para evaluar la calidad uso dos metricas: el Error Cuadratico Medio (MSE) y la Relacion Señal a Ruido de Pico (PSNR). Un PSNR mayor a 30 dB indica calidad aceptable."
+
+**Mostrar:** Funcion calcular_metricas
+
+---
+
+### 4. RESULTADOS Y DEMOSTRACION EN VIVO (3-4 minutos)
+
+**Tomas sugeridas:**
+- Ejecucion del programa en tiempo real
+- Graficas y visualizaciones
+
+**Guion:**
+
+#### 4.1 Ejecutar el programa
+> "Ahora ejecutemos el programa. Como pueden ver, genera una imagen de prueba con gradientes y formas geometricas."
+
+**Mostrar:** Ejecucion de demo_completa()
+
+#### 4.2 Comparacion visual
+> "Esta es la imagen original, y esta es la imagen comprimida con k=50 valores singulares. Visualmente son casi identicas, pero la comprimida usa 75% menos datos."
+
+**Mostrar:** Graficas lado a lado de original vs comprimida
+
+#### 4.3 Analisis de valores singulares
+> "En esta grafica podemos ver como los valores singulares decaen rapidamente. Los primeros 50 valores contienen la mayor parte de la informacion de la imagen."
+
+**Mostrar:** Grafica de valores singulares
+
+#### 4.4 Relacion compresion-calidad
+> "Este analisis muestra como aumentar k mejora la calidad pero reduce la compresion. El punto optimo depende de la aplicacion especifica."
+
+**Mostrar:** Graficas de PSNR vs k y tasa de compresion vs k
+
+---
+
+### 5. ANALISIS DE RESULTADOS (2 minutos)
+
+**Tomas sugeridas:**
+- Tabla de resultados del documento LaTeX
+
+**Guion:**
+> "Los resultados muestran que con solo 50 valores singulares de 300 posibles, obtenemos una imagen con PSNR superior a 35 dB y una compresion del 75%.
+>
+> Esto demuestra la efectividad del SVD: la mayoria de la informacion visual esta concentrada en pocos componentes principales."
+
+**Puntos a destacar:**
+- Balance entre compresion y calidad
+- Comparacion con otros metodos (JPEG, PNG)
+- Aplicaciones practicas
+
+---
+
+### 6. CONCLUSIONES Y APRENDIZAJES (1-2 minutos)
+
+**Tomas sugeridas:**
+- Pantalla con puntos principales
+
+**Guion:**
+> "Este proyecto me permitio comprender como conceptos abstractos del algebra lineal tienen aplicaciones directas y practicas en tecnologia que usamos diariamente.
+>
+> Aprendi sobre:
+> - La importancia del SVD en aplicaciones reales
+> - Como implementar algoritmos matematicos en codigo funcional
+> - La relacion entre teoria matematica y aplicaciones computacionales
+>
+> Las posibles extensiones de este proyecto incluyen compresion adaptativa, optimizacion para alta resolucion, y extension a video."
+
+---
+
+### 7. CIERRE (30 segundos)
+
+**Guion:**
+> "Muchas gracias por su atencion. Este ha sido mi proyecto de Algebra Lineal. Todos los materiales, incluyendo el codigo fuente y el documento LaTeX completo, estan disponibles.
+>
+> Agradezco especialmente a la profesora Ruth Mery Gonzales por su guia en este curso."
+
+---
+
+## ESTRUCTURA DE CARPETAS PARA ENTREGAR
+
+```
+Proyecto_Algebra_Lineal_Barrera/
+├── documento/
+│   ├── proyecto_algebra_lineal.tex
+│   └── proyecto_algebra_lineal.pdf
+├── codigo/
+│   ├── compresor_svd.py
+│   ├── requirements.txt
+│   └── README.md
+├── video/
+│   └── presentacion_proyecto.mp4
+└── README_PRINCIPAL.md
+```
